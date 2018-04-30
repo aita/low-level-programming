@@ -4,7 +4,7 @@ NASM=nasm
 LDFLAGS=
 NASMFLAGS=-felf64
 
-PROGRAMS = mmap fact
+PROGRAMS = mmap fact prime digitsum
 
 .SUFFIXES: .nasm
 
@@ -14,6 +14,12 @@ mmap: mmap.o
 	$(LD) $(LDFLAGS) $< -o $@
 
 fact: fact.o
+	$(LD) $(LDFLAGS) $< -o $@
+
+prime: prime.o
+	$(LD) $(LDFLAGS) $< -o $@
+
+digitsum: digitsum.o
 	$(LD) $(LDFLAGS) $< -o $@
 
 .nasm.o:
